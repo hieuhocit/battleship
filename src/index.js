@@ -1,6 +1,13 @@
-function isEslintWorking() {
-  // It will show an error here if Eslint is working (remember to run npm run init-eslint before)
-return this;
-}
+// Components
+import App from './App';
 
-isEslintWorking();
+// Styles
+import './styles/style.css';
+
+// Handle events
+import handleDOM from './scripts/handleDOM';
+
+document.getElementById('app').innerHTML = App();
+
+const handle = new handleDOM();
+handle.addEvent();

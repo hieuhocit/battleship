@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#app {
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
+  position: relative;
+  background-color: rgb(238, 238, 238);
+}
+
+.title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 6.5rem;
+  padding-block: 1rem;
+  text-shadow: #fffca8 2px 2px 0px, #9c9c9c 4px 4px 0px;
+}
+
+.board-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5rem;
+}
+
+.board {
+  height: max-content;
+  width: max-content;
+  display: grid;
+  grid-template-columns: repeat(10, 2.5rem);
+  grid-template-rows: repeat(10, 2.5rem);
+  border: 1px solid #000;
+  overflow: hidden;
+  box-shadow: 0px 2px 10px 2px rgb(0, 0, 0, 0.2);
+}
+
+.message {
+  max-width: 80%;
+  min-width: 80%;
+  overflow: hidden;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.6rem;
+  border: 2px solid rgb(0, 0, 0, 0.4);
+  margin-inline: auto;
+  margin-bottom: 2rem;
+  padding-block: 0.5rem;
+  border-radius: 8px;
+  text-transform: capitalize;
+  transform: all 100ms ease-in-out;
+}
+
+#computerBoard > .cell {
+  cursor: crosshair;
+}
+
+#computerBoard > .cell:hover {
+  background-color: hsl(120, 100%, 70%);
+}
+
+#computerBoard.aiming {
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+.cell {
+  border: 1px solid #000;
+}
+
+.cell.pointer {
+  background-color: hsl(0, 0%, 70%);
+}
+
+.cell.placed {
+  background-color: hsl(0, 0%, 30%);
+}
+
+.cell.warn {
+  background-color: hsl(0, 100%, 60%);
+}
+
+.cell.destroyed {
+  background-color: #f0ad4e;
+  cursor: not-allowed !important;
+}
+
+.cell.destroyed:hover {
+  background-color: #f0ad4e !important;
+}
+
+.cell.hit {
+  background-color: hsl(0, 100%, 55%) !important;
+}
+
+.cell.hit:hover {
+  background-color: hsl(0, 100%, 55%) !important;
+}
+
+.settings-container, .win-container {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.settings, .win {
+  background-color: rgb(238, 238, 238);
+  padding: 2rem;
+  border-radius: 2px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+}
+
+.win-container {
+  display: none;
+}
+
+.win {
+  gap: 2rem;
+}
+
+.win > h2 {
+  font-size: 4rem;
+}
+
+.settings > h2 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2rem;
+  text-shadow: #fffca8 2px 2px 0px, #9c9c9c 4px 4px 0px;
+}
+
+.settings > p {
+  font-size: 1.8rem;
+}
+
+.settings > .board > .cell {
+  cursor: pointer;
+}
+
+
+.btn {
+  outline: none;
+  border: none;
+  font-size: 1.6rem;
+  padding-block: 0.3em;
+  padding-inline: 1em;
+  background-color: #fffca8;
+  border-radius: 0.2em;
+  font-family: 'Orbitron', sans-serif;
+  cursor: pointer;
+  transition: transform 200ms ease-in-out;
+}
+
+.btn:hover,
+.btn:focus {
+  transform: scale(1.1);
+}
